@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>GreenChainz × EPD International | Partnership Vision</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --bg-dark: #041b24;
+      --bg-light: #f5fbf8;
+      --primary: #1f8a70;
+      --primary-light: #35b18d;
+      --primary-dark: #156856;
+      --accent: #2f73c6;
+      --accent-soft: #e4f0ff;
+      --text-main: #082024;
+      --text-muted: #5a767f;
+      --border-soft: #d4e5dd;
+      --card-bg: #ffffff;
+      --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.06);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --radius-pill: 999px;
+      --transition-fast: 0.25s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #062c38 0, #020b0e 55%, #000000 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Layout */
+    .page-shell {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      color: #e7f6ee;
+    }
+
+    .content-shell {
+      flex: 1;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 20px 20px 60px;
+    }
+
+    @media (min-width: 1024px) {
+      .content-shell {
+        padding: 28px 24px 80px;
+      }
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(22px);
+      background: linear-gradient(
+          to bottom,
+          rgba(1, 11, 15, 0.92),
+          rgba(1, 11, 15, 0.85),
+          transparent
+      );
+      border-bottom: 1px solid rgba(178, 230, 210, 0.08);
+    }
+
+    .header-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 14px 20px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: conic-gradient(
+        from 180deg at 50% 50%,
+        #39e29b,
+        #25a1ff,
+        #39e29b
+      );
+      padding: 1px;
+      box-shadow:
+        0 0 0 1px rgba(27, 183, 127, 0.2),
+        0 12px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .brand-logo-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 11px;
+      background: radial-gradient(circle at 20% 0%, #062b36 0, #021013 40%, #020708 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.06em;
+      color: #e8fff7;
+    }
+
+    .brand-text-primary {
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .brand-text-tagline {
+      font-size: 12px;
+      color: #94b7bf;
+    }
+
+    .tagline-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header-pills {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      color: #a8cbd2;
+    }
+
+    .header-pill {
+      border-radius: var(--radius-pill);
+      padding: 6px 12px;
+      border: 1px solid rgba(111, 194, 166, 0.45);
+      background: radial-gradient(circle at 0 0, rgba(110, 206, 172, 0.16), rgba(1, 11, 15, 0.9));
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .indicator-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #39e29b;
+      box-shadow: 0 0 0 6px rgba(57, 226, 155, 0.2);
+    }
+
+    .nav-links {
+      display: none;
+      gap: 16px;
+    }
+
+    .nav-link {
+      font-size: 13px;
+      color: #b3d6dd;
+      border-radius: 999px;
+      padding: 6px 12px;
+      border: 1px solid transparent;
+      transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .nav-link:hover {
+      background: rgba(37, 161, 255, 0.08);
+      border-color: rgba(64, 151, 230, 0.4);
+      color: #e8f4ff;
+      transform: translateY(-1px);
+    }
+
+    @media (min-width: 840px) {
+      .nav-links {
+        display: flex;
+      }
+    }
+
+    /* Hero */
+    .hero {
+      margin-top: 28px;
+      display: grid;
+      gap: 26px;
+    }
+
+    @media (min-width: 960px) {
+      .hero {
+        grid-template-columns: minmax(0, 3.3fr) minmax(0, 2.7fr);
+        gap: 32px;
+        align-items: center;
+        margin-top: 40px;
+      }
+    }
+
+    .hero-main-card {
+      border-radius: 26px;
+      padding: 24px 22px 24px;
+      background:
+        radial-gradient(circle at 0 0, rgba(79, 238, 173, 0.22), transparent 48%),
+        radial-gradient(circle at 80% 0, rgba(77, 169, 255, 0.26), transparent 55%),
+        linear-gradient(145deg, #031015, #020607);
+      border: 1px solid rgba(145, 226, 193, 0.35);
+      box-shadow:
+        0 24px 80px rgba(0, 0, 0, 0.75),
+        0 0 0 1px rgba(6, 40, 33, 0.65);
+      position: relative;
+      overflow: hidden;
+    }
+
+    @media (min-width: 960px) {
+      .hero-main-card {
+        padding: 30px 30px 26px;
+      }
+    }
+
+    .hero-main-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 120% -20%, rgba(98, 188, 255, 0.18), transparent 55%);
+      pointer-events: none;
+    }
+
+    .hero-pill-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-pill {
+      border-radius: var(--radius-pill);
+      padding: 6px 12px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      border: 1px solid rgba(151, 230, 199, 0.6);
+      color: #daf8ea;
+      background: linear-gradient(
+        to right,
+        rgba(54, 215, 141, 0.32),
+        rgba(31, 110, 88, 0.55)
+      );
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-subpill {
+      border-radius: var(--radius-pill);
+      padding: 4px 10px;
+      border: 1px dashed rgba(126, 194, 231, 0.6);
+      font-size: 11px;
+      color: #b7ddff;
+      background: rgba(1, 16, 30, 0.85);
+    }
+
+    .hero-title {
+      font-size: 32px;
+      line-height: 1.1;
+      letter-spacing: 0.02em;
+      margin-bottom: 10px;
+      color: #f4fffb;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-title span {
+      color: #8fe8c4;
+    }
+
+    @media (min-width: 640px) {
+      .hero-title {
+        font-size: 38px;
+      }
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      color: #bfe6ff;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-body {
+      font-size: 14px;
+      color: #d7f4e6;
+      max-width: 620px;
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-body p + p {
+      margin-top: 10px;
+    }
+
+    .hero-epd-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 11px;
+      border: 1px solid rgba(168, 223, 192, 0.6);
+      background-color: rgba(2, 19, 17, 0.95);
+      color: #c0f0d8;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-epd-badge span {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 0, #4bea9d, #109978);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      box-shadow: 0 0 0 3px rgba(99, 227, 170, 0.25);
+    }
+
+    .hero-footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+      position: relative;
+      z-index: 1;
+      margin-top: 6px;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(86, 215, 166, 0.8);
+      background: radial-gradient(circle at 0 0, #62f0a9, #29b28b);
+      box-shadow:
+        0 10px 28px rgba(0, 0, 0, 0.8),
+        0 0 0 1px rgba(3, 33, 25, 0.75);
+      color: #03110d;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+    }
+
+    .hero-cta:hover {
+      transform: translateY(-1px) translateZ(0);
+      box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.9),
+        0 0 0 1px rgba(4, 48, 36, 0.85);
+      background: radial-gradient(circle at 0 0, #75f3b4, #2cc89b);
+    }
+
+    .hero-cta-icon {
+      width: 16px;
+      height: 16px;
+      border-radius: 999px;
+      background: rgba(6, 53, 42, 0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #c9ffe8;
+      font-size: 11px;
+    }
+
+    .hero-meta {
+      font-size: 12px;
+      color: #a9d2da;
+    }
+
+    .hero-meta strong {
+      color: #e3faf3;
+      font-weight: 600;
+    }
+
+    /* Right Hero Panel */
+    .hero-side {
+      display: grid;
+      gap: 16px;
+    }
+
+    .hero-partner-card {
+      border-radius: 20px;
+      padding: 16px 16px 14px;
+      background: linear-gradient(145deg, #05161c, #020608);
+      border: 1px solid rgba(126, 194, 231, 0.5);
+      box-shadow: 0 16px 50px rgba(0, 0, 0, 0.68);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-partner-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 0 0, rgba(132, 238, 180, 0.18), transparent 55%),
+        radial-gradient(circle at 100% 0, rgba(104, 183, 255, 0.16), transparent 58%);
+      opacity: 0.9;
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+
+    .hero-partner-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.1fr 0.8fr;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .partner-heading {
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #c7e9ff;
+      margin-bottom: 4px;
+    }
+
+    .partner-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #f5fff9;
+      margin-bottom: 4px;
+    }
+
+    .partner-subtitle {
+      font-size: 12px;
+      color: #a2c8d3;
+      margin-bottom: 10px;
+    }
+
+    .partner-list {
+      list-style: none;
+      font-size: 12px;
+      color: #d5f7e5;
+      display: grid;
+      gap: 4px;
+    }
+
+    .partner-list li::before {
+      content: "•";
+      color: #67e2af;
+      margin-right: 6px;
+    }
+
+    .partner-meter {
+      border-radius: 14px;
+      padding: 10px 10px 10px;
+      background: rgba(3, 20, 18, 0.96);
+      border: 1px solid rgba(165, 226, 199, 0.5);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .meter-label {
+      font-size: 11px;
+      color: #b9e5d1;
+      margin-bottom: 6px;
+    }
+
+    .meter-track {
+      width: 100%;
+      height: 7px;
+      border-radius: 999px;
+      background: rgba(7, 45, 32, 0.95);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .meter-fill {
+      position: absolute;
+      inset: 0;
+      width: 76%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #54e29e, #2fd2a2, #1aa6ff);
+      box-shadow: 0 0 12px rgba(65, 225, 158, 0.8);
+    }
+
+    .meter-caption {
+      font-size: 11px;
+      color: #94c7b2;
+      margin-top: 6px;
+    }
+
+    .hero-note-card {
+      border-radius: 18px;
+      padding: 12px 14px;
+      background: rgba(1, 15, 18, 0.9);
+      border: 1px dashed rgba(122, 189, 166, 0.7);
+      color: #c9ebe0;
+      font-size: 12px;
+    }
+
+    .hero-note-card strong {
+      color: #83f0bd;
+    }
+
+    /* Sections */
+    main {
+      margin-top: 34px;
+    }
+
+    .section {
+      border-radius: 22px;
+      margin-bottom: 22px;
+      padding: 20px 18px 18px;
+      background: var(--card-bg);
+      color: var(--text-main);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border-soft);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .section-kicker {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--primary-dark);
+    }
+
+    .section-tag {
+      font-size: 11px;
+      border-radius: var(--radius-pill);
+      padding: 4px 9px;
+      background: rgba(47, 115, 198, 0.06);
+      color: var(--accent);
+      border: 1px solid rgba(47, 115, 198, 0.22);
+    }
+
+    .section-title {
+      font-size: 22px;
+      margin-bottom: 6px;
+      color: var(--bg-dark);
+    }
+
+    .section-intro {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .section-body {
+      font-size: 14px;
+      color: var(--text-main);
+    }
+
+    .section-body p + p {
+      margin-top: 8px;
+    }
+
+    .section-list {
+      margin-top: 10px;
+    }
+
+    .section-list ul {
+      padding-left: 18px;
+      margin-top: 6px;
+    }
+
+    .section-list li {
+      margin-bottom: 4px;
+    }
+
+    .section-callout {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: var(--bg-light);
+      border: 1px solid #c7e5d0;
+      font-size: 13px;
+      color: var(--text-main);
+    }
+
+    .section-callout strong {
+      color: var(--primary-dark);
+    }
+
+    /* Three pillars layout */
+    .pillars-grid {
+      display: grid;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    @media (min-width: 900px) {
+      .pillars-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .pillar-card {
+      border-radius: 18px;
+      border: 1px solid #d4e6dd;
+      background: #ffffff;
+      padding: 12px 12px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .pillar-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--primary);
+      margin-bottom: 2px;
+    }
+
+    .pillar-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--bg-dark);
+    }
+
+    .pillar-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .pillar-subtitle {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 4px;
+    }
+
+    .pillar-list {
+      font-size: 13px;
+      color: var(--text-main);
+      margin-top: 4px;
+    }
+
+    .pillar-list ul {
+      padding-left: 16px;
+    }
+
+    .pillar-impact {
+      margin-top: 6px;
+      border-radius: 12px;
+      padding: 6px 8px;
+      background: #f0faf5;
+      border: 1px solid #c1e8d5;
+      font-size: 12px;
+      color: var(--primary-dark);
+    }
+
+    .pillar-impact ul {
+      padding-left: 16px;
+      margin-top: 4px;
+    }
+
+    /* Accent for arrows/symbols */
+    .arrow-line {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Footer spacer */
+    footer {
+      margin-top: 10px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(187, 228, 207, 0.4);
+      font-size: 11px;
+      color: #9cc5b4;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .footer-dot-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .footer-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #53e29f;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 599px) {
+      .hero-main-card {
+        padding: 20px 18px 20px;
+      }
+      .hero-title {
+        font-size: 28px;
+      }
+      .section {
+        padding: 16px 14px 14px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .header-inner {
+        padding-inline: 14px;
+      }
+      .nav-links {
+        display: none;
+      }
+      .header-pills {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page-shell">
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-logo">
+          <div class="brand-logo-inner">GC</div>
+        </div>
+        <div class="tagline-wrap">
+          <div class="brand-text-primary">GreenChainz</div>
+          <div class="brand-text-tagline">Building Infrastructure for the EPD Ecosystem</div>
+        </div>
+      </div>
+      <div class="header-pills">
+        <div class="header-pill">
+          <div class="indicator-dot"></div>
+          Live partnership concept
+        </div>
+        <nav class="nav-links">
+          <a class="nav-link" href="#vision">Vision</a>
+          <a class="nav-link" href="#challenge">Adoption Challenge</a>
+          <a class="nav-link" href="#pillars">Three Pillars</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <div class="content-shell">
+    <section class="hero" id="top">
+      <div class="hero-main-card">
+        <div class="hero-pill-row">
+          <div class="hero-pill">Strategic Partnership Concept</div>
+          <div class="hero-subpill">EPD Ecosystem Infrastructure</div>
+        </div>
+
+        <div class="hero-epd-badge">
+          <span>∞</span>
+          EPD data → market access → impact intelligence → back to EPD registration
+        </div>
+
+        <h1 class="hero-title">
+          GreenChainz × <span>EPD International</span>
+        </h1>
+        <p class="hero-subtitle">
+          Accelerating global EPD adoption together with infrastructure built for both manufacturers and specifiers.
+        </p>
+
+        <div class="hero-body">
+          <p>
+            We're building the infrastructure to make Environmental Product Declarations the universal
+            standard for sustainable materials procurement—through integrated services, marketplace
+            distribution, and impact research.
+          </p>
+          <p>
+            This page outlines how GreenChainz and EPD International can partner to expand the EPD
+            ecosystem and demonstrate its market impact.
+          </p>
+        </div>
+
+        <div class="hero-footer-row">
+          <a href="#vision" class="hero-cta">
+            <span>Scroll to Explore Partnership Vision</span>
+            <span class="hero-cta-icon">↓</span>
+          </a>
+          <div class="hero-meta">
+            <strong>For discussion:</strong> A structured way to turn EPD rigor into market pull.
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-side">
+        <div class="hero-partner-card">
+          <div class="hero-partner-inner">
+            <div>
+              <div class="partner-heading">Partnership Focus</div>
+              <div class="partner-title">EPD Ecosystem Infrastructure</div>
+              <div class="partner-subtitle">
+                A complementary role to EPD International's programme operator leadership.
+              </div>
+              <ul class="partner-list">
+                <li>Grow the global EPD base</li>
+                <li>Increase usage in procurement workflows</li>
+                <li>Measure and communicate market impact</li>
+              </ul>
+            </div>
+            <div class="partner-meter">
+              <div class="meter-label">EPD adoption opportunity (illustrative)</div>
+              <div class="meter-track">
+                <div class="meter-fill"></div>
+              </div>
+              <div class="meter-caption">
+                Large unserved mid-market manufacturers and fragmented specifier demand.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-note-card">
+          <strong>Positioning:</strong> GreenChainz is not another EPD programme operator.
+          It is an infrastructure partner that brings more, better EPDs into the EPD International
+          system and proves their value in real procurement decisions.
+        </div>
+      </aside>
+    </section>
+
+    <main>
+      <!-- SECTION 1: VISION -->
+      <section class="section" id="vision">
+        <div class="section-header">
+          <div class="section-kicker">Section 1</div>
+          <div class="section-tag">Vision</div>
+        </div>
+        <h2 class="section-title">The Vision: EPD Ecosystem Infrastructure</h2>
+        <p class="section-intro">
+          GreenChainz isn't just another materials marketplace. We are building three integrated pillars
+          that work together to accelerate EPD adoption globally.
+        </p>
+        <div class="section-body">
+          <p>
+            GreenChainz isn't just another materials marketplace. We're building three integrated pillars to accelerate EPD adoption globally:
+          </p>
+          <div class="section-list">
+            <ul>
+              <li><strong>EPD Adoption Infrastructure</strong> – Services helping manufacturers acquire EPDs</li>
+              <li><strong>EPD Data Distribution</strong> – Marketplace connecting verified products to buyers</li>
+              <li><strong>EPD Impact Intelligence</strong> – Research proving EPD drives procurement decisions</li>
+            </ul>
+          </div>
+          <div class="section-callout">
+            Together, these create a flywheel that grows the entire EPD ecosystem while demonstrating its market value.
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: CHALLENGE -->
+      <section class="section" id="challenge">
+        <div class="section-header">
+          <div class="section-kicker">Section 2</div>
+          <div class="section-tag">EPD Adoption Challenge</div>
+        </div>
+        <h2 class="section-title">Why EPD Growth Has Been Slower Than It Should Be</h2>
+        <p class="section-intro">
+          EPD International has created the gold standard for environmental verification. Yet structural
+          barriers on both the supply and demand side limit how quickly the market can adopt EPDs.
+        </p>
+
+        <div class="section-body">
+          <p>
+            EPD International has created the gold standard for environmental verification. But despite the quality and rigor of EPDs, adoption faces barriers:
+          </p>
+
+          <div class="section-list">
+            <p><strong>SUPPLY-SIDE BARRIERS:</strong></p>
+            <ul>
+              <li>Small/medium manufacturers find EPD process complex and expensive</li>
+              <li>Many don't understand EPD value proposition (ROI unclear)</li>
+              <li>Limited resources for LCA data collection and application</li>
+              <li>No clear path from “EPD certified” to “increased sales”</li>
+            </ul>
+          </div>
+
+          <div class="section-list">
+            <p><strong>DEMAND-SIDE BARRIERS:</strong></p>
+            <ul>
+              <li>Architects want sustainable materials but research is fragmented</li>
+              <li>EPD data exists but isn't accessible at point of material selection</li>
+              <li>Comparing EPDs across products requires manual work</li>
+              <li>No infrastructure connects EPD verification to procurement workflow</li>
+            </ul>
+          </div>
+
+          <div class="section-callout">
+            <p><span class="arrow-line">THE RESULT:</span></p>
+            <ul>
+              <li>→ EPD adoption slower than environmental urgency demands</li>
+              <li>→ Leading manufacturers get EPDs; small innovators can't compete</li>
+              <li>→ EPD investment ROI unclear to prospective applicants</li>
+              <li>→ Massive potential impact unrealized</li>
+            </ul>
+            <p style="margin-top:8px;">
+              <strong>This is the problem GreenChainz was created to solve.</strong>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: THREE PILLARS -->
+      <section class="section" id="pillars">
+        <div class="section-header">
+          <div class="section-kicker">Section 3</div>
+          <div class="section-tag">Solution – Three Pillars</div>
+        </div>
+        <h2 class="section-title">The GreenChainz Solution – Three Pillars</h2>
+        <p class="section-intro">
+          An integrated platform that supports EPD adoption end-to-end: from certification readiness to
+          data distribution and evidence of market impact.
+        </p>
+
+        <div class="section-body">
+          <p><strong>Intro:</strong> An Integrated Platform to Accelerate the EPD Ecosystem</p>
+
+          <div class="pillars-grid">
+            <!-- Pillar 1 -->
+            <article class="pillar-card">
+              <div class="pillar-label">Pillar 1</div>
+              <div class="pillar-title">EPD Adoption Infrastructure</div>
+              <div class="pillar-meta">
+                <strong>Problem:</strong> Small manufacturers can't access EPD certification<br />
+                <strong>Solution:</strong> Simplified EPD acquisition support services
+              </div>
+
+              <div class="pillar-subtitle">What We Do</div>
+              <div class="pillar-list">
+                <ul>
+                  <li>EPD Readiness Assessment</li>
+                  <li>Guided EPD Application Support</li>
+                  <li>LCA consultant coordination</li>
+                  <li>Application project management</li>
+                  <li>Programme Operator liaison</li>
+                </ul>
+              </div>
+
+              <div class="pillar-impact">
+                <strong>Impact for EPD International:</strong>
+                <ul>
+                  <li>✓ More EPD applications (market expansion)</li>
+                  <li>✓ Higher quality submissions (we pre-validate data)</li>
+                  <li>✓ Access to underserved manufacturer segments</li>
+                  <li>✓ US market penetration (our initial focus)</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- Pillar 2 -->
+            <article class="pillar-card">
+              <div class="pillar-label">Pillar 2</div>
+              <div class="pillar-title">EPD Data Distribution</div>
+              <div class="pillar-meta">
+                <strong>Problem:</strong> EPD-verified products aren't reaching buyers effectively<br />
+                <strong>Solution:</strong> B2B marketplace connecting verified products to buyers
+              </div>
+
+              <div class="pillar-subtitle">Role in the partnership</div>
+              <div class="pillar-list">
+                <ul>
+                  <li>Expose EPD International-verified products in a curated marketplace</li>
+                  <li>Make EPD data accessible at the point of specification</li>
+                  <li>Streamline comparison between products within the same category</li>
+                  <li>Create direct line-of-sight from EPD registration to sales opportunities</li>
+                </ul>
+              </div>
+
+              <div class="pillar-impact">
+                <strong>Impact for EPD International:</strong>
+                <ul>
+                  <li>✓ Stronger value proposition to manufacturers (“EPD that actually drives demand”)</li>
+                  <li>✓ Increased visibility of the EPD system among architects and procurement teams</li>
+                  <li>✓ Feedback loop on categories and geographies with highest marketplace pull</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- Pillar 3 -->
+            <article class="pillar-card">
+              <div class="pillar-label">Pillar 3</div>
+              <div class="pillar-title">EPD Impact Intelligence</div>
+              <div class="pillar-meta">
+                <strong>Problem:</strong> Limited evidence that EPDs shift procurement in practice<br />
+                <strong>Solution:</strong> Research and analytics proving that EPDs drive decisions
+              </div>
+
+              <div class="pillar-subtitle">What We Measure</div>
+              <div class="pillar-list">
+                <ul>
+                  <li>How often EPDs are used in product shortlist decisions</li>
+                  <li>Conversion uplift for EPD-certified products vs. non-EPD peers</li>
+                  <li>Which EPD attributes matter most to specifiers by segment</li>
+                  <li>Case studies connecting EPD rigor to project outcomes</li>
+                </ul>
+              </div>
+
+              <div class="pillar-impact">
+                <strong>Impact for EPD International:</strong>
+                <ul>
+                  <li>✓ Evidence base for policy, marketing, and ecosystem engagement</li>
+                  <li>✓ Stories and data to communicate EPD value to manufacturers</li>
+                  <li>✓ Clear link between EPD investment and commercial outcomes</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+
+          <div class="section-callout">
+            <strong>Together, the three pillars form a closed-loop system:</strong>
+            manufacturers are supported into EPDs → their products are surfaced where buyers choose → the impact of EPDs on real projects is measured and communicated back into the ecosystem.
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-dot-row">
+        <div class="footer-dot"></div>
+        <span>Concept landing page for GreenChainz × EPD International partnership.</span>
+      </div>
+      <span>Designed for discussion – not a public commitment.</span>
+    </footer>
+  </div>
+</div>
+</body>
+</html>
